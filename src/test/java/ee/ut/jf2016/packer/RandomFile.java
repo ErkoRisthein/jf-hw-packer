@@ -15,18 +15,19 @@ class RandomFile {
 
   private static final Logger log = LoggerFactory.getLogger(RandomFile.class);
 
-  static Path create(Path file) throws IOException {
+  static Path create(Path file, long size) throws IOException {
     Random random = new Random();
     byte[] buffer = new byte[4096];
-    long limit = 100L * FileUtils.ONE_MB;
-    int size = 0;
+    long fullChunks = size / buffer.length;
+    int lastSize = (int) (size % buffer.length);
     log.debug("Generating random file at {}", file);
     try (OutputStream out = new BufferedOutputStream(Files.newOutputStream(file))) {
-      while (size < limit) {
+      for (long i = 0; i < fullChunks; i++) {
         random.nextBytes(buffer);
         out.write(buffer);
-        size += buffer.length;
       }
+      random.nextBytes(buffer);
+      out.write(buffer, 0, lastSize);
     }
     log.debug("Wrote {} bytes to {}", size, file);
     return file;

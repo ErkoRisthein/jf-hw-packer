@@ -96,15 +96,35 @@ public class UnpackTest {
   }
 
   @Test
-  public void testTwoFiles() throws IOException {
+  public void testTwoSmallFiles() throws IOException {
     Files.write(inputDir.resolve("foo"), "bar".getBytes(StandardCharsets.UTF_8));
     Files.write(Files.createDirectory(inputDir.resolve("sub")).resolve("hello"), "abcdef".getBytes(StandardCharsets.UTF_8));
     unpackAndVerify();
   }
 
   @Test
-  public void testBigFile() throws IOException {
-    RandomFile.create(inputDir.resolve("random"));
+  public void testTwoBigFilesWithSimpleSizes() throws IOException {
+    RandomFile.create(inputDir.resolve("random1"), 4L * FileUtils.ONE_MB);
+    RandomFile.create(inputDir.resolve("random2"), 4L * FileUtils.ONE_MB);
+    unpackAndVerify();
+  }
+
+  @Test
+  public void testTwoBigFilesWithCustomSizes() throws IOException {
+    RandomFile.create(inputDir.resolve("random1"), 10L * FileUtils.ONE_MB + 53243);
+    RandomFile.create(inputDir.resolve("random2"), 7L * FileUtils.ONE_MB + 3412);
+    unpackAndVerify();
+  }
+
+  @Test
+  public void testBigFileWithSimpleSize() throws IOException {
+    RandomFile.create(inputDir.resolve("random"), 100L * FileUtils.ONE_MB);
+    unpackAndVerify();
+  }
+
+  @Test
+  public void testBiggerFileWithCustomSize() throws IOException {
+    RandomFile.create(inputDir.resolve("random"), 10L * FileUtils.ONE_MB + 123);
     unpackAndVerify();
   }
 
