@@ -111,7 +111,7 @@
                 </echo>
                 <basename property="build-directory-name" file="${project.build.directory}"/>
                 <zip destfile="${project.build.directory}/${project.name}-${sbn}.zip">
-                  <zipfileset dir="." prefix="jf-homework" excludes="${build-directory-name}/**,dependency-reduced-pom.xml,.settings/**,.idea/**,*.iml,*.ipr,*.iws"/>
+                  <zipfileset dir="." prefix="jf-homework" excludes="local-maven-repo/**,${build-directory-name}/**,dependency-reduced-pom.xml,.settings/**,.idea/**,*.iml,*.ipr,*.iws"/>
                 </zip>
                 <delete file="homework.properties"/>
               </target>
