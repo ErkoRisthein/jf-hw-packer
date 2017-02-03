@@ -1,4 +1,4 @@
-package ee.ut.jf2016.packer;
+package org.zeroturnaround.jf.packer;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -11,12 +11,14 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import ee.ut.jf2016.packer.PackerTestUtil;
+
 public class UnpackTest {
 
   @Rule
   public LoggingRule loggingRule = new LoggingRule();
 
-  private final Packer packer = new LoggingPacker(new PackerImpl());
+  private final Packer packer = new LoggingPacker(new UncompressedDataPacker());
 
   private Path tempDir;
 

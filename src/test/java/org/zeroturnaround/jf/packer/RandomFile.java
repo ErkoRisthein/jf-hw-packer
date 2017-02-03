@@ -1,4 +1,4 @@
-package ee.ut.jf2016.packer;
+package org.zeroturnaround.jf.packer;
 
 import java.io.BufferedOutputStream;
 import java.io.IOException;
@@ -7,7 +7,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Random;
 
-import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,4 +1,4 @@
-package ee.ut.jf2016.packer;
+package org.zeroturnaround.jf.packer;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -6,9 +6,9 @@ import java.nio.file.Path;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class PackerImpl implements Packer {
+public class UncompressedDataPacker implements Packer {
 
-  private static final Logger log = LoggerFactory.getLogger(PackerImpl.class);
+  private static final Logger log = LoggerFactory.getLogger(UncompressedDataPacker.class);
 
   @Override
   public void pack(Path inputDir, Path outputArchive) throws IOException {

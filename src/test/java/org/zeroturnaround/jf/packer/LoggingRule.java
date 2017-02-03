@@ -1,4 +1,4 @@
-package ee.ut.jf2016.packer;
+package org.zeroturnaround.jf.packer;
 
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;

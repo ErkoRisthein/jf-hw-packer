@@ -1,4 +1,4 @@
-package ee.ut.jf2016.packer;
+package org.zeroturnaround.jf.packer;
 
 import java.io.IOException;
 import java.nio.file.Path;

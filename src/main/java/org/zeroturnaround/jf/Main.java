@@ -1,12 +1,12 @@
-package ee.ut.jf2016;
+package org.zeroturnaround.jf;
 
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Locale;
 
-import ee.ut.jf2016.packer.Packer;
-import ee.ut.jf2016.packer.PackerImpl;
+import org.zeroturnaround.jf.packer.Packer;
+import org.zeroturnaround.jf.packer.UncompressedDataPacker;
 
 public class Main {
 
@@ -15,7 +15,7 @@ public class Main {
             String command = args[0].toLowerCase(Locale.ENGLISH);
             Path p1 = Paths.get(args[1]);
             Path p2 = Paths.get(args[2]);
-            Packer packer = new PackerImpl();
+            Packer packer = new UncompressedDataPacker();
             switch (command) {
             case "pack":
                 packer.pack(p1, p2);
@@ -25,7 +25,7 @@ public class Main {
                 return;
             }
         }
-        System.out.println("Usage: java -jar jf2016-executable.jar ...");
+        System.out.println("Usage: java -jar jf-homework4.jar ...");
         System.out.println("  pack <inputDir> <outputArchive>");
         System.out.println("  unpack <inputArchive> <outputDir>");
     }
