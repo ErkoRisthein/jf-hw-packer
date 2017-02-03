@@ -26,6 +26,7 @@ Requirements
 6. Support big files that don’t fit into memory at once.
 7. Buffer data for better performance.
 8. Close all resources properly.
+9. Use the newer java.nio.file API.
 
 File Format of the Archive
 ----------
@@ -62,7 +63,7 @@ mvn clean deploy
 
 #...skipping building, testing and packaging output from Maven...
 
-[INFO] --- maven-antrun-plugin:1.7:run (package homework ZIP) @ jf2016-hwX ---
+[INFO] --- maven-antrun-plugin:1.8:run (package homework ZIP) @ homework4 ---
 [INFO] Executing tasks
 
 main:
@@ -70,19 +71,17 @@ Your full name (e.g. John Smith):
 Jane Smith
 Your Student Book Number (matrikli number, e.g. B12345):
 B12345
-Homework number:
-1
 Comment:
 Java IO
-      [zip] Building zip: /Users/jane/Workspaces/JF/jf-skeleton/target/jf-howework-B12345-1.zip
-   [delete] Deleting: /Users/jane/Workspaces/JF/jf-skeleton/homework.properties
+      [zip] Building zip: /Users/jane/workspace/jf-hw-packer/target/jf-homework4-B12345.zip
+   [delete] Deleting: /Users/jane/workspace/jf-hw-packer/homework.properties
 [INFO] Executed tasks
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 45.028s
-[INFO] Finished at: Thu Aug 28 15:36:19 EEST 2014
-[INFO] Final Memory: 17M/99M
+[INFO] Total time: 20.041 s
+[INFO] Finished at: 2017-02-03T11:35:11+02:00
+[INFO] Final Memory: 21M/283M
 [INFO] ------------------------------------------------------------------------
 ```
 
