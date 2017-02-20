@@ -21,7 +21,7 @@ Requirements
 1. Support both relative and absolute paths.
 2. Support directories recursively.
 3. Create missing parent directories automatically.
-4. Only pack files (no support for empty directories).
+4. Only pack files (i.e. an input directory tree consisting of only empty folders is packed as the minimum archive consisting of just the Archive Type as there are no File Chunks).
 5. Use `DataInputSteam` and `DataOutputStream`.
 6. Support big files that don’t fit into memory at once.
 7. Buffer data for better performance.
