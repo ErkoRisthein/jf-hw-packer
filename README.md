@@ -97,4 +97,4 @@ Java IO
 After Maven has finished, you can find the generated ZIP file in *target* folder with name such as 
 *jf-homework4-B12345.zip* (it contains your Student Book Number/matrikli number and homework number).
 
-Attach the ZIP to an e-mail and **send it our way**, to *jf@zeroturnaround.com*.
+The only thing left to do now is to send the ZIP file as an attachment to an e-mail with subject **"Homework 4 - *your Student Code/maktrikli number*"** to *jf@zeroturnaround.com*.
