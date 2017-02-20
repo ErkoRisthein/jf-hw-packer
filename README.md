@@ -4,7 +4,7 @@ Java Fundamentals - I/O Homework
 Description
 ----------
 
-Your task is to write a Java program which packs and unpacks files without compression. Implement the following interface
+Your task is to finish a Java program which packs and unpacks files without compression. Complete the implementation of `UncompressedDataPacker` that implements the following interface:
 
 ```
 public interface Packer {
@@ -37,6 +37,15 @@ File Format of the Archive
 * File Path – bytes of a String of a relative path in the archive separated by / characters (use `readUTF()`/`writeUTF()` methods)
 * File Length – 8 bytes showing how many bytes does the File Contents take (big endian long)
 * File Contents – actual file in the archive
+
+Various tips
+-------------
+
+If you want to build the distribution zip without fixing the tests, then you can do that by skipping tests in the build by adding -DskipTests to the command:
+```shell
+./mvnw clean deploy -DskipTests
+```
+However, note that to get the full score for this assignment, you still need to make the tests pass correctly.
 
 Using Eclipse
 -------------
