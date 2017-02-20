@@ -13,7 +13,7 @@ public interface Packer {
 }
 ```
 
-The project has a set of unit tests. To get the maximum points all those tests must pass even with limited memory (run `mvn clean test` from command line). Existing tests cannot be altered.
+The project has a set of unit tests. To get the maximum points all those tests must pass even with limited memory (run `./mvnw clean test` from command line). Existing tests cannot be altered.
 
 Requirements
 ----------
@@ -60,7 +60,7 @@ Submitting your assignment
 For your convenience, we have set up the Maven project to ZIP up all files in your project folder so it is easy for you to attach it to an e-mail and send it our way. All you need to do is to execute the following command in your project folder:
 
 ```
-mvn clean deploy
+./mvnw clean deploy
 ```
 
 It will ask you for your full name, Student Book Number (also known as *matrikli number*), homework number and a comment (optional).
@@ -68,7 +68,7 @@ It will ask you for your full name, Student Book Number (also known as *matrikli
 Example:
 
 ```bash
-mvn clean deploy
+./mvnw clean deploy
 
 #...skipping building, testing and packaging output from Maven...
 
