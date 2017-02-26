@@ -131,7 +131,7 @@ public class UnpackTest {
   }
 
   private void unpackAndVerify() throws IOException {
-    PackerTestUtil.unpackAndVerify(inputDir, tempDir, (inputArchive1, outputDir1) -> packer.unpack(inputArchive1, outputDir1));
+    PackerTestUtil.unpackAndVerify(inputDir, tempDir, packer::unpack);
   }
 
 }
